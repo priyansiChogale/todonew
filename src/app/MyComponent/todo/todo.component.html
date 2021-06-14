@@ -1,0 +1,27 @@
+<div class="container bg1">
+  <nav class="navbar navbar-light bg-light">
+    <div class="container">
+      <h4><a class="navbar-brand">CreateToDo</a></h4>
+      <a href="#add" class="nav-link" style="color: black;">AddTask</a>
+      <a href="#toDoList" class="nav-link" style="color: black;">MyTasks</a>
+      <a href="#abt" class="nav-link" style="color: black;">About</a>
+      <form class="d-flex">
+        <button class="btn btn-outline-warning" type="submit" style="margin-right: 20px;">Login</button>
+        <button class="btn btn-outline-warning" type="submit">Sign Up</button>
+      </form>
+    </div>
+  </nav>
+</div>
+<div style="font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;"><app-add-todo (todoAdd)="addTodo($event)"></app-add-todo></div>
+<div style="background-color: #f4d9d5;">
+<h4 style="margin-top: 40px; margin-left: 45%; font-size: 28px;" id="toDoList">To Do List</h4>
+<div *ngIf="this.todoss.length === 0; else elseBlock">No To-Dos left..</div>
+<ng-template #elseBlock>
+<div *ngFor="let todo of todoss">
+    <app-todo-item [todo]="todo" (todoDelete)="deleteTodo($event)"></app-todo-item>
+</div></ng-template></div>
+<div>
+  <h4 style="margin-top: 40px; margin-left: 45%; font-size: 28px;" id="abt">About</h4>
+    <p style="margin-left: 30%;">A to do list allows you to prioritize the tasks that are more important.</p>
+    <p style="margin-left: 25%;">To do lists are a great motivational tool because you can use them to clarify your goals.</p>
+</div>

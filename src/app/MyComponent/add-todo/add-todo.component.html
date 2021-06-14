@@ -1,0 +1,16 @@
+<h4 style="margin-top: 40px; margin-left: 45%; font-size: 28px;" id="add">Add new To-Do</h4>
+<br>
+<form (ngSubmit)="onSubmit()">
+    <div class="form-group">
+      <label for="title"><h5>Todo Title</h5></label>
+      <input type="text" [(ngModel)]="title" class="form-control" name="title" id="title" placeholder="Enter title">
+    </div>
+    <br>
+    <div class="form-group">
+      <label for="desc"><h5>Todo Description</h5></label>
+      <input type="text" [(ngModel)]="desc" class="form-control" name="desc" id="desc" placeholder="Enter Description">
+    </div>
+    <br>
+    <button type="submit" class="btn btn-primary">ADD Task</button>
+    <br><hr><hr>
+  </form>
